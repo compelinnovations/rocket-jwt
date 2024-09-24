@@ -5,7 +5,7 @@ use rocket_jwt::jwt;
 
 static SECRET_KEY: &str = "secret_key";
 
-#[jwt(SECRET_KEY, exp = 10, leeway = 10)]
+#[jwt(SECRET_KEY, exp = 120, leeway = 120)]
 pub struct UserClaim {
     id: String,
 }
@@ -21,11 +21,11 @@ fn index() -> String {
 }
 
 #[get("/user_id")]
-fn get_uer_id_from_jwt(user: UserClaim) -> String {
+fn get_user_id_from_jwt(user: UserClaim) -> String {
     format!("user id is {}", user.id)
 }
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index, get_uer_id_from_jwt])
+    rocket::build().mount("/", routes![index, get_user_id_from_jwt])
 }

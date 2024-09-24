@@ -1,6 +1,6 @@
 [package]
 name = "rocket-jwt"
-version = "0.5.3"
+version = "0.5.4"
 edition = "2021"
 authors = ["Yaxian <yaxian.gu@gmail.com>"]
 repository = "https://github.com/Yaxian/rocket-jwt"
@@ -24,7 +24,7 @@ serde = { version = "1", features = ["derive"] }
 
 
 [dev-dependencies]
-rocket = { git = "https://github.com/rwf2/Rocket", rev = "3bf9ef0", features = ["json"] }
+rocket = { git = "https://github.com/rwf2/Rocket", rev = "3bf9ef0" }
 trybuild = "1.0"
 
 [build-dependencies]
